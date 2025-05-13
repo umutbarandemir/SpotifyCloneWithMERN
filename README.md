@@ -16,8 +16,12 @@
 ``https://ui.shadcn.com/docs/installation/vite`` -> installation  
 
 # BACKEND
-``npm init -y``  
-``npm i express mongoose dotenv cloudinary cors @clerk/express socket.io``  
+``npm init -y``    
+``npm i express mongoose dotenv cloudinary cors @clerk/express socket.io``    
+``npm i -D nodemon``  
+
+``npm run yeldamm``  -> start script  
+
 
 
 # NOTES
