@@ -27,7 +27,7 @@ app.use(cors({ origin:"localhost:5173",credentials:true})); // Enable CORS for a
 
 app.use(clerkMiddleware()); // Use Clerk middleware for authentication, req.auth will be populated with user info
 app.use(fileUpload({
-  useTempFiles: true,
+  useTempFiles: true, // Use temporary files for uploads
   tempFileDir: path.join(__dirname, 'tmp'), // Temporary directory for file uploads
   createParentPath: true,// Create parent directories if they don't exist
   limits: { fileSize: 50 * 1024 * 1024 }, // Set file size limit to 50MB
@@ -40,6 +40,10 @@ app.use("/api/admin",adminRoutes);
 app.use("/api/songs",songsRoutes);
 app.use("/api/albums",albumsRoutes);
 app.use("/api/stats",statsRoutes);
+
+app.use((err, req, res, next) => {
+  res.status(500).json({ message: process.env.NODE_ENV ==="production" ? 'Internal server error' : err.message }); // Send a generic error response
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
