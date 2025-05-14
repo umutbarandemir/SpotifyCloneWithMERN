@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import { clerkMiddleware } from '@clerk/express'
-import {fileUpload} from 'express-fileupload';
+import fileUpload from 'express-fileupload';
 import path from 'path';
 
 // Import routes
@@ -41,6 +41,7 @@ app.use("/api/songs",songsRoutes);
 app.use("/api/albums",albumsRoutes);
 app.use("/api/stats",statsRoutes);
 
+// when next(error) is called, the error handling middleware will be triggered
 app.use((err, req, res, next) => {
   res.status(500).json({ message: process.env.NODE_ENV ==="production" ? 'Internal server error' : err.message }); // Send a generic error response
 });

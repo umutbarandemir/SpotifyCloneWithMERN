@@ -16,9 +16,9 @@ export const requireAdmin = async (req, res, next) => {
 			return res.status(403).json({ message: "Unauthorized - you must be an admin" });
 		}
 
-		next();
+		next(); // Proceed to the next middleware or route handler
 	} catch (error) {
         console.error("Error in requireAdmin middleware:", error);
-		next(error);
+		next(error); // Pass the error to the error handling middleware
 	}
 };
