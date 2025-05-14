@@ -22,6 +22,8 @@
 
 ``npm run yeldamm``  -> start script  
 
+``npm i express-fileupload `` -> express middleware for uploading files
+
 
 
 # NOTES
