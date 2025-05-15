@@ -23,7 +23,7 @@ const __dirname = path.resolve(); // Get the current directory name
 
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
-app.use(cors({ origin:"localhost:5173",credentials:true})); // Enable CORS for all routes 
+app.use(cors({ origin:"http://localhost:5173",credentials:true})); // Enable CORS for all routes 
 
 app.use(clerkMiddleware()); // Use Clerk middleware for authentication, req.auth will be populated with user info
 app.use(fileUpload({

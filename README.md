@@ -1,9 +1,15 @@
 # FRONTEND
 ``npm install`` -> in the Frontend file    
-``npm run yeldamm `` -> start script   
+``npm run yeldamm `` -> start script  
+``npm i react-router-dom``  
+``npm i axios``  
+
 
 ### CLERK
 ``https://dashboard.clerk.com/apps/app_2x2ZzmBWCErxFytr6frGSBjin8a/instances/ins_2x2ZzlaVaiUOpSSQCQMiQkn5icl?app_created=true``-> Website  
+``npx shadcn@latest add card``  
+
+
 
 ### TAILWIND
 ``npm install tailwindcss @tailwindcss/vite`` -> in the Frontend directry to install tailwind  
