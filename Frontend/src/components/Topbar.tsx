@@ -24,7 +24,9 @@ const Topbar = () => {
 				)}
 
 				<SignedOut>
-					<SignInOAuthButtons />
+					<div className="w-fit"> {/* Optional wrapper */}
+						<SignInOAuthButtons />
+					</div>
 				</SignedOut>
 
 				<UserButton />
