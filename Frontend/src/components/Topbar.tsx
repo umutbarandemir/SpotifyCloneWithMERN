@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
 const Topbar = () => {
-	const { isAdmin } = true;
+	const  isAdmin  = true;
 	console.log({ isAdmin });
 
 	return (

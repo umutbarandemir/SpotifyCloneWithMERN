@@ -8,6 +8,9 @@
 ### CLERK
 ``https://dashboard.clerk.com/apps/app_2x2ZzmBWCErxFytr6frGSBjin8a/instances/ins_2x2ZzlaVaiUOpSSQCQMiQkn5icl?app_created=true``-> Website  
 ``npx shadcn@latest add card``  
+``npx shadcn@latest add resizable``  
+
+
 
 
 

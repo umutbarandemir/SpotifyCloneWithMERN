@@ -8,11 +8,11 @@ const SignInOAuthButtons = () => {
 		return null;
 	}
 
-	const signInWithGoogle = () => {
+	const signInWithGoogle = () => { // Redirect to Google OAuth
 		signIn.authenticateWithRedirect({
-			strategy: "oauth_google",
-			redirectUrl: "/sso-callback",
-			redirectUrlComplete: "/auth-callback",
+			strategy: "oauth_google", // The OAuth strategy to use
+			redirectUrl: "/sso-callback", // This is the URL where the user will be redirected after authentication
+			redirectUrlComplete: "/auth-callback", // This is the URL where the user will be redirected after authentication
 		});
 	};
 

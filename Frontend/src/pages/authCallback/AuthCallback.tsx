@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const AuthCallback = () => {
 	const { isLoaded, user } = useUser();
 	const navigate = useNavigate();
-	const syncAttempted = useRef(false);
+	const syncAttempted = useRef(false); // Flag to track if sync has been attempted, this is to prevent multiple syncs
 
 	useEffect(() => {
 		const syncUser = async () => {

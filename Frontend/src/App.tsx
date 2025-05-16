@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from "./pages/Home/Home.tsx";
 import AuthCallback from './pages/authCallback/AuthCallback.tsx';
 import { AuthenticateWithRedirectCallback } from '@clerk/clerk-react';
+import MainLayout from './layout/MainLayout.tsx';
 
 function App() {
   
@@ -12,8 +13,11 @@ function App() {
     <>
     <Routes>
       <Route path='/sso-callback' element={<AuthenticateWithRedirectCallback signUpForceRedirectUrl={"/auth-callback"} />}/>
-      <Route path='/' element={<Home />} />
 			<Route path='/auth-callback' element={<AuthCallback />} />
+
+      <Route element={<MainLayout />}>
+        <Route path='/' element={<Home />} />
+      </Route>
     </Routes>
     </>
   )
