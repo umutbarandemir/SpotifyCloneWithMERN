@@ -1,9 +1,10 @@
 import { axiosInstance } from "@/lib/axios";
+import type { Album, Song } from "@/types"; // @ means inside src folder with chadcnui
 import {create} from "zustand";
 
 type MusicStore =  {
-	songs: any[];
-	albums: any[];
+	songs: Song[]; // custom type for songs
+	albums: Album[]; // custom type for albums
 	isLoading: boolean;
 	error: string | null;
 	
