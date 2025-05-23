@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import LeftSideBar from "./components/LeftSideBar";
+import FriendsActivity from "./components/FriendsActivity";
 
 const MainLayout = () => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -39,7 +40,8 @@ const MainLayout = () => {
 
 						{/* right sidebar */}
 						<ResizablePanel defaultSize={20} minSize={10} maxSize={25} collapsedSize={0}>
-							{/* <RightSidebar /> */} rightsidebar
+							{/* <RightSidebar /> */} 
+							<FriendsActivity></FriendsActivity>
 						</ResizablePanel>
 					</>
 				)}
