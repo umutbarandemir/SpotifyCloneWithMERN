@@ -39,7 +39,7 @@ const MainLayout = () => {
 						<ResizableHandle className='w-2 bg-black rounded-lg transition-colors' />
 
 						{/* right sidebar */}
-						<ResizablePanel defaultSize={20} minSize={10} maxSize={25} collapsedSize={0}>
+						<ResizablePanel defaultSize={20} minSize={10} maxSize={20} collapsedSize={0}>
 							{/* <RightSidebar /> */} 
 							<FriendsActivity></FriendsActivity>
 						</ResizablePanel>
