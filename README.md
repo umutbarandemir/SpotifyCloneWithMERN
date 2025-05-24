@@ -40,4 +40,5 @@
 
 # NOTES
 
-Leave two spaces at the end for a line break
+Leave two spaces at the end for a line break  
+ctrl + space -> to get suggestions
