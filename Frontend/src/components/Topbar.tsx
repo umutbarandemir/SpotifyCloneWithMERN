@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import SignInOAuthButtons from "./SignInOAuthButtons.tsx";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
+import { useAuthStore } from "@/stores/useAuthStore.ts";
 
 const Topbar = () => {
-	const  isAdmin  = true;
-	console.log({ isAdmin });
+	const  {isAdmin}  = useAuthStore();
+	// console.log({ isAdmin });
 
 	return (
 		<div className='flex items-center justify-between p-4 sticky top-0 bg-zinc-900/75 backdrop-blur-md z-10'>
