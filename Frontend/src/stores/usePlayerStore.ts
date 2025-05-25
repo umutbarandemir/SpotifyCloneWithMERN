@@ -79,6 +79,41 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			set({ isPlaying: false });
 		}
 	},
+
+	/* 
+		playNext: () => {
+		const { currentIndex, queue } = get();
+		const nextIndex = currentIndex + 1;
+
+		if (nextIndex < queue.length) {
+			// Play next in queue
+			const nextSong = queue[nextIndex];
+			set({
+				currentSong: nextSong,
+				currentIndex: nextIndex,
+				isPlaying: true,
+			});
+		} else {
+			// Play a random "Made For You" song from music store
+			const madeForYouSongs = useMusicStore.getState().madeForYouSongs;
+
+			if (madeForYouSongs.length > 0) {
+				const randomIndex = Math.floor(Math.random() * madeForYouSongs.length);
+				const randomSong = madeForYouSongs[randomIndex];
+
+				set({
+					queue: [randomSong],
+					currentSong: randomSong,
+					currentIndex: 0,
+					isPlaying: true,
+				});
+			} else {
+				set({ isPlaying: false });
+			}
+		}
+	},
+
+	*/
 	playPrevious: () => {
 		const { currentIndex, queue } = get();
 		const prevIndex = currentIndex - 1;
