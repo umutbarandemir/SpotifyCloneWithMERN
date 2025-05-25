@@ -76,7 +76,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		});
 	} else {
 		// Last song in queue - show toast
-		toast("End of queue. You've reached the last song.", {
+		toast("End of the queue. You've reached the last song.", {
 			icon: "🎵",
 			style: {
 				borderRadius: '8px',
@@ -138,6 +138,14 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			});
 		} else {
 			// no prev song
+			toast("Start of the queue. No Previous Song", {
+			icon: "🎵",
+			style: {
+				borderRadius: '8px',
+				background: '#333',
+				color: '#fff',
+			},
+			});
 			set({ isPlaying: false });
 
 		}
