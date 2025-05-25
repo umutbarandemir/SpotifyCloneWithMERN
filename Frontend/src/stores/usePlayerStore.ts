@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import type{ Song } from "@/types";
+import { toast } from "react-hot-toast";
 
 type PlayerStore = {
 	currentSong: Song | null;
@@ -62,22 +63,30 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	playNext: () => {
-		const { currentIndex, queue } = get();
-		const nextIndex = currentIndex + 1;
+	const { currentIndex, queue } = get();
+	const nextIndex = currentIndex + 1;
 
-		// if there is a next song to play, let's play it
-		if (nextIndex < queue.length) {
-			const nextSong = queue[nextIndex];
+	if (nextIndex < queue.length) {
+		const nextSong = queue[nextIndex];
 
-			set({
-				currentSong: nextSong,
-				currentIndex: nextIndex,
-				isPlaying: true,
-			});
-		} else {
-			// no next song
-			set({ isPlaying: false });
-		}
+		set({
+			currentSong: nextSong,
+			currentIndex: nextIndex,
+			isPlaying: true,
+		});
+	} else {
+		// Last song in queue - show toast
+		toast("End of queue. You've reached the last song.", {
+			icon: "🎵",
+			style: {
+				borderRadius: '8px',
+				background: '#333',
+				color: '#fff',
+			},
+		});
+
+		set({ isPlaying: false });
+	}
 	},
 
 	/* 

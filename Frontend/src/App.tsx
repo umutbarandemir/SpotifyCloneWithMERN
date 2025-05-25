@@ -7,6 +7,7 @@ import { AuthenticateWithRedirectCallback } from '@clerk/clerk-react';
 import MainLayout from './layout/MainLayout.tsx';
 import Chat from './pages/chat/Chat.tsx';
 import Album from './pages/album/Album.tsx';
+import { Toaster } from "react-hot-toast";
 
 function App() {
   
@@ -23,6 +24,10 @@ function App() {
         <Route path='/albums/:albumId' element={<Album />} />
       </Route>
     </Routes>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
     </>
   )
 }

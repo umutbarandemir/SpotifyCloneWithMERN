@@ -3,7 +3,7 @@
 ``npm run yeldamm `` -> start script  
 ``npm i react-router-dom``  
 ``npm i axios``  
-
+``npm install react-hot-toast``  
 
 ### CLERK
 ``https://dashboard.clerk.com/apps/app_2x2ZzmBWCErxFytr6frGSBjin8a/instances/ins_2x2ZzlaVaiUOpSSQCQMiQkn5icl?app_created=true``-> Website  
@@ -24,8 +24,7 @@
 ``npx shadcn@latest add resizable``  
 ``npx shadcn@latest add scroll-area``  
 ``npx shadcn@latest add avatar``  
-
-
+``npx shadcn@latest add slider``  
 
 # BACKEND
 ``npm init -y``    
