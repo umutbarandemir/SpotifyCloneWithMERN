@@ -8,6 +8,7 @@ import MainLayout from './layout/MainLayout.tsx';
 import Chat from './pages/chat/Chat.tsx';
 import Album from './pages/album/Album.tsx';
 import { Toaster } from "react-hot-toast";
+import Admin from './pages/admin/Admin.tsx';
 
 function App() {
   
@@ -17,6 +18,8 @@ function App() {
     <Routes>
       <Route path='/sso-callback' element={<AuthenticateWithRedirectCallback signUpForceRedirectUrl={"/auth-callback"} />}/>
 			<Route path='/auth-callback' element={<AuthCallback />} />
+
+      <Route path='/admin' element={<Admin />} />
 
       <Route element={<MainLayout />}>
         <Route path='/' element={<Home />} />
