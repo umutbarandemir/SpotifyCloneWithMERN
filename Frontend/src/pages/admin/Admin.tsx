@@ -1,12 +1,12 @@
 import { useAuthStore } from "@/stores/useAuthStore";
 import { Album, Music } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import SongsTabContent from "./components/SongsTabContent";
-// import AlbumsTabContent from "./components/AlbumsTabContent";
 import { useEffect } from "react";
 import { useMusicStore } from "@/stores/useMusicStore";
 import Header from "./components/Header";
 import DashboardStats from "./components/DashboardStats";
+import SongsTabContent from "./components/SongsTabContent";
+import AlbumsTabContent from "./components/AlbumsTabContent";
 
 const Admin = () => {
 	const { isAdmin, isLoading } = useAuthStore();
@@ -43,10 +43,10 @@ const Admin = () => {
 				</TabsList>
 
 				<TabsContent value='songs'>
-					{/* <SongsTabContent /> */} SONGS
+					<SongsTabContent />
 				</TabsContent>
 				<TabsContent value='albums'>
-					{/* <AlbumsTabContent /> */} ALBUMS
+					<AlbumsTabContent />
 				</TabsContent>
 			</Tabs>
 		</div>
