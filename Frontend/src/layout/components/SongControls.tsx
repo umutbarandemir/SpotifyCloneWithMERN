@@ -81,7 +81,7 @@ export const SongControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hidden sm:inline-flex hover:text-white text-zinc-400'
+							className='hidden sm:inline-flex hover:text-white text-zinc-400 hover:cursor-pointer'
 						>
 							<Shuffle className='h-4 w-4' />
 						</Button>
@@ -89,7 +89,7 @@ export const SongControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hover:text-white text-zinc-400'
+							className='hover:text-white text-zinc-400 hover:cursor-pointer'
 							onClick={playPrevious}
 							disabled={!currentSong}
 						>
@@ -98,7 +98,7 @@ export const SongControls = () => {
 
 						<Button
 							size='icon'
-							className='bg-white hover:bg-white/80 text-black rounded-full h-8 w-8'
+							className='bg-white hover:bg-white/80 text-black rounded-full h-8 w-8 hover:cursor-pointer'
 							onClick={togglePlay}
 							disabled={!currentSong}
 						>
@@ -107,7 +107,7 @@ export const SongControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hover:text-white text-zinc-400'
+							className='hover:text-white text-zinc-400 hover:cursor-pointer'
 							onClick={playNext}
 							disabled={!currentSong}
 						>
@@ -116,7 +116,7 @@ export const SongControls = () => {
 						<Button
 							size='icon'
 							variant='ghost'
-							className='hidden sm:inline-flex hover:text-white text-zinc-400'
+							className='hidden sm:inline-flex hover:text-white text-zinc-400 hover:cursor-pointer'
 						>
 							<Repeat className='h-4 w-4' />
 						</Button>
@@ -137,7 +137,7 @@ export const SongControls = () => {
 				{/* volume controls */}
 				<div className='hidden sm:flex items-center gap-4 min-w-[180px] w-[30%] justify-end'>
 
-					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+					<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400 hover:cursor-pointer'>
 						<ListMusic className='h-4 w-4' />
 					</Button>
 
@@ -146,7 +146,7 @@ export const SongControls = () => {
 						<Button
                             size='icon'
                             variant='ghost'
-                            className='hover:text-white text-zinc-400'
+                            className='hover:text-white text-zinc-400 hover:cursor-pointer'
                             onClick={() => {
                                 if (audioRef.current) {
                                     audioRef.current.muted = !isMuted;
@@ -160,7 +160,7 @@ export const SongControls = () => {
 							value={[volume]}
 							max={100}
 							step={1}
-							className='w-24 hover:cursor-grab active:cursor-grabbing'
+							className='w-24 hover:cursor-grab active:cursor-grabbing hover:cursor-pointer'
                             onValueChange={(value) => {
                                 const newVolume = value[0];
                                 setVolume(newVolume);

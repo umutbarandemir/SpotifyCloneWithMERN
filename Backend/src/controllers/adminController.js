@@ -1,5 +1,6 @@
 import {Song} from "../models/songModel.js";
 import {Album} from "../models/albumModel.js";
+import cloudinary from "../lib/cloudinary.js"; // Import Cloudinary configuration
 
 // Function to upload a file to Cloudinary
 const uploadToCloudinary = async (file) => {
@@ -16,42 +17,40 @@ const uploadToCloudinary = async (file) => {
 }
 
 export const createSong = async (req, res, next) => {
-    try {
-        if(!req.files || !req.files.audioFile) { 
-            return res.status(400).json({ message: "No audio file uploaded" });
-        }
+	try {
+		if (!req.files || !req.files.audioFile) {
+			return res.status(400).json({ message: "No audio file uploaded" });
+		}
 
-        const { title, artist, albumId} = req.body; // Destructure the request body
-        const audioFile = req.files.audioFile; // Get the audio file from the request
-        const imageFile = req.files.imageFile; // Get the image file from the request
+		const { title, artist, albumId, duration } = req.body; // added duration to destructure
+		const audioFile = req.files.audioFile;
+		const imageFile = req.files.imageFile;
 
-        const audioUrl = audioFile ? await uploadToCloudinary(audioFile) : null; // Upload the audio file to Cloudinary
-        const imageUrl = imageFile ? await uploadToCloudinary(imageFile) : null; // Upload the image file to Cloudinary if provided
+		const audioUrl = audioFile ? await uploadToCloudinary(audioFile) : null;
+		const imageUrl = imageFile ? await uploadToCloudinary(imageFile) : null;
 
-        const song = new Song({
-            title,
-            artist,
-            audioUrl,
-            imageUrl,
-            duration,
-            album: albumId|| null, // Set the album ID if provided
-        });
+		const song = new Song({
+			title,
+			artist,
+			audioUrl,
+			imageUrl,
+			duration,
+			album: albumId || null,
+		});
 
-        await song.save(); // Save the song to the database
+		await song.save();
 
-        // If an album ID is provided, update the album with the new song
-        if (albumId) {
-          await Album.findByIdAndUpdate(albumId, { $push: { songs: song._id } });
-        }
+		if (albumId) {
+			await Album.findByIdAndUpdate(albumId, { $push: { songs: song._id } });
+		}
 
-        res.statues(201).json({message: "Song created successfully",song});
+		res.status(201).json({ message: "Song created successfully", song }); // ✅ fixed line
 
-    } catch (error) {
-        next(error); // Pass the error to the error handling middleware
-    }
-
-}
-
+	} catch (error) {
+		console.error("Error in createSong:", error); // more helpful log
+		next(error);
+	}
+};
 export const deleteSong = async (req, res, next) => {
 	try {
 		const { id } = req.params;

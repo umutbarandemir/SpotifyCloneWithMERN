@@ -26,6 +26,10 @@
 ``npx shadcn@latest add avatar``  
 ``npx shadcn@latest add slider``  
 ``npx shadcn@latest add tabs``  
+``npx shadcn@latest add table``  
+`npx shadcn@latest add dialog`  
+`npx shadcn@latest add input`  
+`npx shadcn@latest add select`  
 
 
 # BACKEND
